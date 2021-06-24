@@ -1,6 +1,7 @@
+import java.util.Scanner;
 public class SumDigits {
-    import java.util.Scanner;
     public static void main(String[] args) {
+        
 
         // create scanner object
         Scanner input = new Scanner(System.in);
@@ -10,30 +11,53 @@ public class SumDigits {
         int b = readNum(input);
 
         // check if the value's even digits are equal
-        Boolean isEven = sumOfDigits(a, b);
+        Boolean isEven = gatherSum(a, b);
 
 
     }
+
     public static int readNum(Scanner input) {
 
-        //prompt
-        System.out.print("Please enter an integer: ");
-        // read and return value
-        return int x = input.nextInt();
+        // prompt user
+        System.out.print("Please enter a positive an integer: ");
+
+        // read integer
+        int x = input.nextInt();
+
+        if (x > 0)
+            // return the valid integer
+            return x;
+        else  
+            // call the function again if the integer is invalid  
+            return readNum(input); 
 
     }
 
-    public static Boolean sumOfDigits(int a, int b) {
+    public static Boolean gatherSum(int a, int b) {
 
-        int sumA, sumB, length;
+        int lengthA = 0, lengthB = 0, y = a, z = b;
 
-      int i = 0;
-
-      for (i; i < 10; i++) {
+        // get the length of a
+        while (y > 0) {
+            y /= 10;
+            lengthA++;
+        }
+        // get the length of b
+        while (z > 0) {
+            z /= 10;
+            lengthB++;
+        }
 
         
 
-      }
+
+
+
+
+        // test
+        System.out.printf("%d has %d digits \n", a, lengthA);
+        System.out.printf("%d has %d digits \n", b, lengthB);
+        return true;
 
     }
 }
