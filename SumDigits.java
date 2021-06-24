@@ -66,10 +66,10 @@ public class SumDigits {
     }
 
     // returns true if the numbers are equal, false otherwise
-    public static Boolean isEqual(int a, int b) {
+    public static Boolean isEqual(int c, int d) {
         
         // is equal
-        if (a == b) 
+        if (c == d) 
             return true;
 
         // is not equal
